@@ -1,4 +1,4 @@
-package com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.explore.presentation
+package com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.explore.presentation.action
 
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.seeall.data.SeeAllType
 
