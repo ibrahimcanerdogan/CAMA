@@ -3,7 +3,7 @@ package com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.explore.domain.
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.core.base.BaseUseCase
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.genre.domain.usecase.GetMovieGenresUseCase
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.core.action.UiState
-import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.explore.domain.model.ExploreInitialDataModel
+import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.explore.domain.model.ExploreDataModel
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.home.data.MovieRepository
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.home.data.local.entity.MovieType
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.home.domain.mapper.HomeMovieModelMapper
@@ -22,7 +22,7 @@ class GetExploreInitialDataUseCaseImpl @Inject constructor(
     private val getMovieGenreUseCase: GetMovieGenresUseCase,
     private val userSettingsDataStore: UserSettingsDataStore
 ) : GetExploreInitialDataUseCase, BaseUseCase() {
-    override fun getExploreInitialData(): Flow<UiState<ExploreInitialDataModel>> {
+    override fun getExploreInitialData(): Flow<UiState<ExploreDataModel>> {
         return execute {
             combine(
                 getMovieGenreUseCase.getMovieGenresUseCase(),
@@ -52,7 +52,7 @@ class GetExploreInitialDataUseCaseImpl @Inject constructor(
                     )
                 }
 
-                ExploreInitialDataModel(
+                ExploreDataModel(
                     bannerMovies = bannerMovieList,
                     popularMovies = popularMovieModelList,
                     forYouMovie = popularMovieModelList[(0..10).random()]

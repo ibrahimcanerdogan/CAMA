@@ -9,8 +9,10 @@ import dagger.hilt.android.components.ViewModelComponent
 
 @Module
 @InstallIn(ViewModelComponent::class)
-abstract class ExploreModule {
+abstract class UseCaseModule {
 
     @Binds
-    abstract fun bindGetExploreInitialDataUseCase(getExploreInitialDataUseCaseImpl: GetExploreInitialDataUseCaseImpl) : GetExploreInitialDataUseCase
+    abstract fun bindGetExploreInitialDataUseCase(
+        getExploreInitialDataUseCaseImpl: GetExploreInitialDataUseCaseImpl
+    ) : GetExploreInitialDataUseCase
 }

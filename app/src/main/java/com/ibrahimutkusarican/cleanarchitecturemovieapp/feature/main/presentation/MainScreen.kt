@@ -30,10 +30,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navDeepLink
 import androidx.navigation.toRoute
-import com.ibrahimutkusarican.cleanarchitecturemovieapp.ui.common.widget.MovieSnackbarHost
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.detail.presentation.MovieDetailScreen
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.detail.presentation.MovieDetailViewModel
-import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.explore.presentation.ExploreScreen
+import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.explore.presentation.MovieExploreScreen
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.home.presentation.BannerMoviesScreen
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.home.presentation.HomeScreen
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.home.presentation.HomeViewModel
@@ -44,6 +43,7 @@ import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.search.presentat
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.seeall.presentation.SeeAllScreen
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.seeall.presentation.SeeAllViewModel
 import com.ibrahimutkusarican.cleanarchitecturemovieapp.feature.settings.presentation.SettingsScreen
+import com.ibrahimutkusarican.cleanarchitecturemovieapp.ui.common.widget.MovieSnackbarHost
 import kotlinx.coroutines.flow.collectLatest
 
 @OptIn(ExperimentalSharedTransitionApi::class)
@@ -141,7 +141,7 @@ fun MainScreen(viewModel: MainViewModel) {
                     )
                 }
                 composable<NavigationRoutes.BottomNavRoutes.Explore> {
-                    ExploreScreen(
+                    MovieExploreScreen(
                         sharedTransitionScope = this@SharedTransitionLayout,
                         animatedContentScope = this@composable
                     )
